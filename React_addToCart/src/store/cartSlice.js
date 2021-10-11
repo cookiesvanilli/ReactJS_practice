@@ -15,7 +15,7 @@ export const cartSlice = createSlice({
         minusCart: (state, data) => {
             let articul = data.payload;
             if (state.value[articul] === undefined) state.value[articul] = 0;
-            else if (state.value[articul] - 1 <= 0) state.value[articul] = 0; 
+            else if (state.value[articul] - 1 <= 0) delete state.value[articul]; 
             else state.value[articul]--;
         },
         deleteCart: (state, data) => {
